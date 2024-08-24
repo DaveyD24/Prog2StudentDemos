@@ -18,7 +18,7 @@
 
 
 
-#Arrary Loop example
+#Array Loop example
 sales = [100.0, 201.0, 205.5]
 
 # profit = 0

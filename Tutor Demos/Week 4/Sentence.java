@@ -22,13 +22,9 @@ public class Sentence {
     public void display() {
         System.out.println(sentence + ":");
         System.out.println("Total words in sentence: " + wordCount());
-        showZCount();
+        System.out.println("Number of z words in this sentence: " + zCount());
         System.out.println(isPascalCase() ? "Sentence Is In Pascal Case" : "sentence is not in pascal case");
         System.out.println("--------------------------------");
-    }
-
-    public void showZCount() {
-        System.out.println("Number of z words in this sentence: " + zCount());
     }
 
     private int zCount() {

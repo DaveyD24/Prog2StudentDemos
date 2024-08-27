@@ -1,0 +1,19 @@
+Slides 5-8:
+    -Program that needs fixing:
+        --Ambigious methods split into procedures/functions
+        --Removed side effects from functions
+    -Keep the important points within the skeleton
+
+Slide 10: Small split/len demo
+Slide 11: Small string loop demo
+Slide 12: Either small demo or reuse week 3 demo (foreach variations)
+Slide 13-14: Split demo + mention spaces quirk
+Slides 15: Demo that utitlises a bunch of the string functions
+
+Slides 18-22: Read loop -> merged read loop -> Python equivalent
+Slide 23: Just show week 2 tutor demo
+
+Slide 27: Bad boolean demo
+Slide 28: idk just find a previous one (also show the slide 29 concept)
+
+Slide 30: Big demo for sentences

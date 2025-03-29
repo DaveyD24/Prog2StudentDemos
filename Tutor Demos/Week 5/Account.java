@@ -1,7 +1,7 @@
 import java.text.*;
 
 public class Account {
-    private AccountType type;
+    private final AccountType type;
     private double balance;
 
     public Account(AccountType type) {
@@ -28,7 +28,7 @@ public class Account {
 
     public void transferTo(double amount, Account target) {
         balance -= amount;
-        target.balance += amount;
+        target.withdraw(amount);
     }
 
     @Override

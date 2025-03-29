@@ -2,8 +2,8 @@ public class Customer {
     public static void main(String[] args) {
         new Customer().use();
     }
-    private Account savingsAccount;
-    private Account loanAccount;
+    private final Account savingsAccount;
+    private final Account loanAccount;
 
     public Customer() {
         savingsAccount = new Account(AccountType.SAVINGS);
@@ -14,11 +14,11 @@ public class Customer {
         char choice;
         while ((choice = readChoice()) != 'x') {
             switch (choice) {
-            case 'd': deposit(); break;
-            case 'w': withdraw(); break;
-            case 't': transfer(); break;
-            case 's': show(); break;
-            default: help(); break;
+                case 'd': deposit(); break;
+                case 'w': withdraw(); break;
+                case 't': transfer(); break;
+                case 's': show(); break;
+                default: help(); break;
             }
         }
         System.out.println("Done");
@@ -30,7 +30,8 @@ public class Customer {
     }
 
     private void deposit() {
-        savingsAccount.deposit(readAmount("deposit"));
+        double amount = readAmount("deposit");
+        savingsAccount.deposit(amount);
     }
 
     private void withdraw() {

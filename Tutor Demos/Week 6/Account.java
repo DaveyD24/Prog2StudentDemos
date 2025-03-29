@@ -8,7 +8,7 @@ import java.text.*;
  * In all of these, the amount is read in.
  */
 public class Account {
-    private String type;
+    private final String type;
     private double balance;
 
     public Account(String type) {

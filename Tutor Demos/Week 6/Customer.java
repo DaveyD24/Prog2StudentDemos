@@ -11,7 +11,7 @@ public class Customer {
     public static void main(String[] args) {
         new Customer().use();
     }
-    private LinkedList<Account> accounts;
+    private final LinkedList<Account> accounts;
 
     public Customer() {
         accounts = new LinkedList<Account>();
@@ -53,46 +53,48 @@ public class Customer {
     private void add() {
         String type = readType();
         Account acc = account(type);
-        if (acc != null) {
-            System.out.println("Account already exists!");
+        if (acc == null) {
+            accounts.add(new Account(type));
         }
         else {
-            accounts.add(new Account(type));
+            System.out.println("Account already exists!");
         }
     }
 
     private void remove() {
         String type = readType();
         Account acc = account(type);
-        if (acc == null) {
-            System.out.println("No such account!");
+        if (acc != null) {
+            accounts.remove(acc);
         }
         else {
-            accounts.remove(acc);
+            System.out.println("No such account!");
         }
     }
 
     private void deposit() {
-        Account acc = account(readType());
-        if (acc == null) {
-            System.out.println("No such account!");
+        String type = readType();
+        Account acc = account(type);
+        if (acc != null) {
+            acc.deposit(readAmount("deposit"));
         }
         else {
-            acc.deposit(readAmount("deposit"));
+            System.out.println("No such account!");
         }
     }
 
     private void withdraw() {
-        Account acc = account(readType());
-        if (acc == null) {
-            System.out.println("No such account!");
-        }
-        else {
+        String type = readType();
+        Account acc = account(type);
+        if (acc != null) {
             double amount = readAmount("withdraw");
             if (acc.has(amount))
                 acc.withdraw(amount);
             else
                 System.out.println("Insufficient funds");
+        }
+        else {
+            System.out.println("No such account!");
         }
     }
 
@@ -109,9 +111,10 @@ public class Customer {
 
     private void help() {
         System.out.println("Menu options");
+        System.out.println("a = add");
+        System.out.println("r = remove");
         System.out.println("d = deposit");
         System.out.println("w = withdraw");
-        System.out.println("t = transfer");
         System.out.println("s = show");
         System.out.println("x = exit");
     }

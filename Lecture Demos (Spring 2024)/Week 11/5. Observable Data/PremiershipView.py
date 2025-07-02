@@ -13,7 +13,7 @@ class PremiershipView:
         self.treeFrame = None
         
     def control(self):
-        ut.Image(self.window, "rugby.png").pack()
+        ut.Image(self.window, "../../images/rugby.png").pack()
         ut.Separator(self.window).pack(fill=X, expand=True, pady=(20,20))
         self.premierLbl = ut.Label(self.window, f"Premiers: {self.model.premiers().name}")
         self.premierLbl.pack()

@@ -5,7 +5,7 @@ class Team:
         self.wins = 0
         self.losses = 0
         self.drawn = 0
-        self.image_path = f"{self.name}.png"
+        self.image_path = f"../../images/{self.name}.png"
     
     def win_percentage(self):
         games_played = self.wins + self.drawn + self.losses

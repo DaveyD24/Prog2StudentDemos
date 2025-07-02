@@ -9,7 +9,7 @@ class GamesView:
         self.tree = None
 
     def control(self):
-        ut.Image(self.window, "rugby.png").pack()
+        ut.Image(self.window, "../../images/rugby.png").pack()
         ut.Separator(self.window).pack(fill=X, expand=True, pady=(20,20))
         self.setup_tree()
         ut.Separator(self.window).pack(expand=True, fill=X, pady=(20,20))

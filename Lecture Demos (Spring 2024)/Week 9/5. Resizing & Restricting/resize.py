@@ -16,7 +16,7 @@ class Application:
     def setup_scene(self):
         self.root.title('Lecture 9')
         self.root.resizable(False, False)
-        img = ImageTk.PhotoImage(Image.open('cat_icon.png'))
+        img = ImageTk.PhotoImage(Image.open('../../images/cat_icon.png'))
         self.root.iconphoto(False, img)
         self.root.protocol("WM_DELETE_WINDOW", self.disable)
 
@@ -33,7 +33,7 @@ class Application:
 
     def setup_picture(self):
         frame = Frame(self.root)
-        header_image = ImageTk.PhotoImage(Image.open('cat.jpg').resize((300, 300)))
+        header_image = ImageTk.PhotoImage(Image.open('../../images/cat.jpg').resize((300, 300)))
         lbl = Label(frame, image=header_image)
         lbl.photo = header_image
         lbl.pack()

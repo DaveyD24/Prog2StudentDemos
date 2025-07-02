@@ -4,7 +4,7 @@ from PIL import ImageTk, Image
 root = Tk()
 header = Label(root, text="Lecture 8", background="grey", foreground="white", font='Helvetica 18 bold').pack(fill=X, expand=True, anchor='n', pady=(0, 10))
 
-cat = ImageTk.PhotoImage(Image.open('cat.jpg').resize((500, 500)))
+cat = ImageTk.PhotoImage(Image.open('../../images/cat.jpg').resize((500, 500)))
 
 label1 = Label(root, image=cat)
 label1.pack()

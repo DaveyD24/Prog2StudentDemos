@@ -13,7 +13,7 @@ class GamesView:
             widget.destroy()
 
     def control(self):
-        ut.Image(self.window, "rugby.png").pack()
+        ut.Image(self.window, "../../images/rugby.png").pack()
         ut.Separator(self.window).pack(fill=X, expand=True, pady=(20,20))
         for game in self.model.games:
             ut.Label(self.window, game).pack()

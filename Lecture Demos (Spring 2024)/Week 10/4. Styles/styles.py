@@ -15,7 +15,7 @@ class Application:
         self.content()
     
     def content(self):
-        ut.Image(self.root, "supplier.png").pack()
+        ut.Image(self.root, "../../images/supplier.png").pack()
         ut.Separator(self.root).pack(fill=X, pady=(20, 20))
         ut.Label(self.root, "This is a heading").pack()
         ut.Separator(self.root).pack(fill=X, pady=(20, 20))

@@ -22,7 +22,7 @@ class Application:
 
     def setup_picture(self):
         frame = Frame(self.root)
-        header_image = ImageTk.PhotoImage(Image.open('cat.jpg').resize((300, 300)))
+        header_image = ImageTk.PhotoImage(Image.open('../../images/cat.jpg').resize((300, 300)))
         lbl = Label(frame, image=header_image)
         lbl.photo = header_image
         lbl.pack()

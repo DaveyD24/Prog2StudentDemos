@@ -10,7 +10,7 @@ class SeasonView:
         self.model = model
 
     def control(self):
-        ut.Image(self.window, "rugby.png").pack()
+        ut.Image(self.window, "../../images/rugby.png").pack()
         ut.Separator(self.window).pack(fill=X, expand=True, pady=(20,20))
         ut.Label(self.window, "Season underway").pack()
         ut.Separator(self.window).pack(expand=True, fill=X, pady=(20,20))

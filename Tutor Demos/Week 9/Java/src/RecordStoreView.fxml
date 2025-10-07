@@ -11,7 +11,7 @@
 <?import javafx.scene.image.Image?>
 <VBox xmlns:fx="http://javafx.com/fxml" fx:controller="RecordStoreController" alignment="CENTER" spacing="10">
     <ImageView fitWidth="200" fitHeight="200">
-        <Image url="image/ready_to_be.jpg"/>
+        <Image url="image/Serenity.png"/>
     </ImageView>
     <Text fx:id="albumTxt"/>
     <Text fx:id="artistTxt"/>

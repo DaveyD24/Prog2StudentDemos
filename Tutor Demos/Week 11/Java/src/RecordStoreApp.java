@@ -21,9 +21,11 @@ public class RecordStoreApp extends Application {
     private RecordStore seededRecordStore() {
         return new RecordStore(
                 new Albums(FXCollections.observableArrayList(Arrays.asList(
-                        new Album("TWICE", "Ready To Be", 12, 34.99, "/view/image/ready_to_be.jpg"),
-                        new Album("WJSN", "As You Wish", 12, 34.99, "/view/image/as_you_wish.png"),
-                        new Album("IVE", "Love Dive", 12, 29.99, "/view/image/love_dive.jpeg"))))
-        );
+                        new Album("Mayumi", "Serenity", 12, 34.99, "/view/image/Serenity.png"),
+                        new Album("Takio Senzu", "Oceans", 12, 34.99, "/view/image/Oceans.png"),
+                        new Album("Haru Yelin", "Alive", 12, 29.99, "/view/image/Alive.png"),
+                        new Album("Mayumi", "Arblard", 12, 29.99, "/view/image/Arblard.png"),
+                        new Album("Rin Kadoshi", "Lost", 12, 29.99, "/view/image/Lost.png")
+        ))));
     }
 }

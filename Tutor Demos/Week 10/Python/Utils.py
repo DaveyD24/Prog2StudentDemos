@@ -6,8 +6,8 @@ from PIL import ImageTk
 
 class Utils:
     python_blue = "#be8fff"
-    width = 400
-    image_height = 250
+    width = 540
+    image_height = 300
 
     @staticmethod
     def disable():

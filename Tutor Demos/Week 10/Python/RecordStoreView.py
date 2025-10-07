@@ -16,7 +16,7 @@ class RecordStoreView:
 
     def control(self):
 
-        ut.image(self.root, "image/kpop_banner.PNG", 280, 400).pack()
+        ut.image(self.root, "image/banner.png", 300, 540).pack()
         ut.separator(self.root).pack(expand=True, fill=X, pady=(20, 20))
         ut.label(self.root, "Albums").pack()
         ut.separator(self.root).pack(expand=True, fill=X, pady=(20,20))
@@ -76,12 +76,15 @@ class RecordStoreView:
 
 def seeded_record_store():
     return RecordStore(Albums(albums=[
-        Album("TWICE", "Ready To Be", 12, 34.99, "image/ready_to_be.jpg"),
-        Album("WJSN", "As You Wish", 12, 34.99, "image/as_you_wish.png"),
-        Album("IVE", "Love Dive", 12, 29.99, "image/love_dive.jpeg")
+        Album("Mayumi", "Serenity", 12, 34.99, "image/Serenity.png"),
+        Album("Takio Senzu", "Oceans", 12, 34.99, "image/Oceans.png"),
+        Album("Haru Yelin", "Alive", 12, 29.99, "image/Alive.png"),
+        Album("Mayumi", "Arblard", 12, 29.99, "image/Arblard.png"),
+        Album("Rin Kadoshi", "Lost", 12, 29.99, "image/Lost.png")
     ]))
 
 if __name__ == "__main__":
     root = Tk()
+    root.title("Record Store")
     RecordStoreView(root, seeded_record_store()).control()
     root.mainloop()

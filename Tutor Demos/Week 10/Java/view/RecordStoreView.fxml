@@ -12,8 +12,8 @@
 <?import javafx.scene.control.Separator?>
 <VBox fx:controller="controller.RecordStoreController" xmlns:fx="http://javafx.com/fxml" alignment="CENTER" spacing="10" prefWidth="400">
 
-    <ImageView fitWidth="400" fitHeight="280">
-        <Image url="/view/image/kpop_banner.PNG"/>
+    <ImageView fitWidth="540" fitHeight="300">
+        <Image url="/view/image/banner.png"/>
     </ImageView>
     <Separator/>
     <Label text="Albums"/>

@@ -13,7 +13,7 @@ class RecordStoreView:
 
     def control(self):
 
-        image_ = ImageTk.PhotoImage(Image.open("ready_to_be.jpg").resize((200, 200)))
+        image_ = ImageTk.PhotoImage(Image.open("Serenity.png").resize((200, 200)))
         lbl = Label(self.root, image=image_)
         lbl.photo = image_
         lbl.pack()

@@ -1,3 +1,10 @@
+//Goal: Display each sentence in this form:
+// - Sentence
+// - Number of words: <n>
+// - Number of z words: <n>
+//
+// z count should be case-insensitive
+
 public class Sentence {
 
     private final String sentence;
@@ -7,20 +14,19 @@ public class Sentence {
     }
 
     public void display() {
-        System.out.println("--------------------------------");
-        System.out.println(sentence + ":");
-        System.out.println("Total words in sentence: " + wordCount());
-        System.out.println("Number of z words in this sentence: " + zCount());
-        System.out.println(isPascalCase() ? "Sentence Is In Pascal Case" : "sentence is not in pascal case");
-        System.out.println("--------------------------------");
+        System.out.println("-----------------------");
+        System.out.println(sentence);
+        System.out.println("-----------------------");
+        System.out.println("Number of words: " + wordCount());
+        System.out.println("Number of z words: " + zWordCount());
     }
 
     private int wordCount() {
-        return sentence.split(" ").length;
+        String[] words = sentence.split(" ");
+        return words.length;
     }
 
-    //Count Pattern
-    private int zCount() {
+    private int zWordCount() {
         int count = 0;
         for (String word : sentence.split(" ")) {
             if (containsZ(word)) {
@@ -30,30 +36,21 @@ public class Sentence {
         return count;
     }
 
-    //String Loop + Any Pattern
     private boolean containsZ(String word) {
         for (int i = 0; i < word.length(); i++) {
-            if (word.toLowerCase().charAt(i) == 'z') {
+            char c = word.toLowerCase().charAt(i);
+            if (c == 'z') {
                 return true;
             }
         }
         return false;
     }
 
-    //Advanced feature
-    private boolean isPascalCase() {
-        for (String word : sentence.split(" ")) {
-            if (Character.isLowerCase(word.charAt(0))) {
-                return false;
-            }
-        }
-        return true;
-    }
-
     public static void main(String[] args) {
         String[] sentences = {"David is zhe best tutor ever", "The Big Brown Fox Did Some Stuff I Guess", "time to muzz", "Example sentence", "exampleZ SentenzeZ"};
         for (String sentence : sentences) {
-            new Sentence(sentence).display();
+            Sentence s = new Sentence(sentence);
+            s.display();
         }
     }
 }

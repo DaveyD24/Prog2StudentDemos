@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+
+<VBox fx:controller="controller.RecordStoreController" xmlns:fx="http://javafx.com/fxml" alignment="CENTER" spacing="10" stylesheets="/view/style.css">
+
+    <ImageView fitHeight="300" preserveRatio="true">
+        <Image url="/view/image/banner.jpg"/>
+    </ImageView>
+
+    <Separator/>
+    <Label text="Albums"/>
+    <Separator/>
+
+    <TableView fx:id="albumsTv">
+        <placeholder>
+            <Text text="No albums available"/>
+        </placeholder>
+        <columns>
+            <TableColumn text="Artist" fx:id="artistCol"/>
+            <TableColumn text="Title" fx:id="titleCol"/>
+            <TableColumn text="Stock" fx:id="stockCol"/>
+            <TableColumn text="Price" fx:id="priceCol"/>
+        </columns>
+    </TableView>
+
+    <HBox>
+        <Button HBox.hgrow="ALWAYS" maxWidth="Infinity" fx:id="removeBtn" text="Remove" onAction="#handleRemove"/>
+        <Button HBox.hgrow="ALWAYS" maxWidth="Infinity" fx:id="viewBtn" text="View" onAction="#handleView"/>
+        <Button HBox.hgrow="ALWAYS" maxWidth="Infinity" text="Close" onAction="#handleClose"/>
+    </HBox>
+
+</VBox>

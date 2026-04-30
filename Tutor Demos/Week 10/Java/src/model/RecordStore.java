@@ -1,13 +1,18 @@
 package model;
 
-public class RecordStore {
-    private final Albums albums;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
-    public RecordStore(Albums albums) {
-        this.albums = albums;
+import java.util.List;
+
+public class RecordStore {
+    private final ObservableList<Album> albums;
+
+    public RecordStore(List<Album> albums) {
+        this.albums = FXCollections.observableArrayList(albums);
     }
 
-    public Albums getAlbums() {
+    public ObservableList<Album> getAlbums() {
         return this.albums;
     }
 }

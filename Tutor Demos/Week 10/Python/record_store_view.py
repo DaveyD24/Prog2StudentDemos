@@ -1,6 +1,5 @@
 from tkinter import *
 from model.record_store import RecordStore
-from model.albums import Albums
 from model.album import Album
 from album_view import AlbumView
 from tk_utils import TkUtils as ut
@@ -22,7 +21,7 @@ class RecordStoreView:
         ut.separator(self.root).pack(expand=True, fill=X, pady=(20,20))
 
         self.tree = ut.treeview(self.root, columns=["Albums"])
-        for album in self.model.albums.albums:
+        for album in self.model.albums:
             self.tree.insert('', END, values=[album.__str__()])
 
         button_frame = Frame(self.root)
@@ -55,7 +54,7 @@ class RecordStoreView:
         return self.tree.item(self.tree.selection()[0], option="values")[0]
 
     def album(self, str):
-        for album in self.model.albums.albums:
+        for album in self.model.albums:
             if str == album.__str__():
                 return album
         return None
@@ -74,14 +73,14 @@ class RecordStoreView:
         self.root.destroy()
 
 def seeded_record_store():
-    return RecordStore(Albums(albums=[
+    return RecordStore(albums=[
         Album("Stardust", "Serenity", 12, 34.99),
         Album("Takio Senzu", "Oceans", 12, 34.99),
         Album("Haru Yelin", "Alive", 12, 29.99),
         Album("Stardust", "Chords", 12, 29.99),
         Album("Rin Kadoshi", "Lost", 12, 29.99),
         Album("Haru Yelin", "Wind", 12, 29.99)
-    ]))
+    ])
 
 if __name__ == "__main__":
     root = ut.root()

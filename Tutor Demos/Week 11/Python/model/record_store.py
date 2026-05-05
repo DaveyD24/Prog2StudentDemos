@@ -1,5 +1,3 @@
-from model.albums import Albums
-
 class RecordStore:
-    def __init__(self, albums=None):
+    def __init__(self, albums=[]):
         self.albums = albums

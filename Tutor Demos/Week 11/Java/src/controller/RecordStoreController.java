@@ -3,15 +3,13 @@ package controller;
 import au.edu.uts.ap.javafx.Controller;
 import au.edu.uts.ap.javafx.ViewLoader;
 import javafx.application.Platform;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import model.Album;
-import model.Albums;
 import model.RecordStore;
-
-import java.io.IOException;
 
 public class RecordStoreController extends Controller<RecordStore> {
 
@@ -29,7 +27,7 @@ public class RecordStoreController extends Controller<RecordStore> {
         removeBtn.disableProperty().bind(albumsTv.getSelectionModel().selectedItemProperty().isNull());
         viewBtn.disableProperty().bind(albumsTv.getSelectionModel().selectedItemProperty().isNull());
 
-        albumsTv.setItems(getRecordStore().getAlbums().getAlbums());
+        albumsTv.setItems(getRecordStore().getAlbums());
         artistCol.setCellValueFactory(cellData -> cellData.getValue().artistProperty());
         titleCol.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
         stockCol.setCellValueFactory(cellData -> cellData.getValue().stockProperty().asObject());
@@ -43,20 +41,20 @@ public class RecordStoreController extends Controller<RecordStore> {
         return model;
     }
 
-    public Albums getSelectedAlbums() {
-        return new Albums(albumsTv.getSelectionModel().getSelectedItems());
+    public ObservableList<Album> getSelectedAlbums() {
+        return albumsTv.getSelectionModel().getSelectedItems();
     }
 
     @FXML
     public void handleRemove(ActionEvent event) {
-        for (Album album : getSelectedAlbums().getAlbums()) {
+        for (Album album : getSelectedAlbums()) {
             getRecordStore().getAlbums().remove(album);
         }
     }
 
     @FXML
     public void handleView(ActionEvent event) {
-        for (Album album : getSelectedAlbums().getAlbums()) {
+        for (Album album : getSelectedAlbums()) {
             ViewLoader.showStage(album, "/view/AlbumView.fxml", album.getName(), new Stage());
         }
     }

@@ -21,7 +21,7 @@ public class RecordStoreController extends Controller<RecordStore> {
 
     @FXML
     private void initialize() {
-        albumsLv.setItems(getRecordStore().getAlbums().getAlbums());
+        albumsLv.setItems(getRecordStore().getAlbums());
         removeBtn.disableProperty().bind(albumsLv.getSelectionModel().selectedItemProperty().isNull());
         viewBtn.disableProperty().bind(albumsLv.getSelectionModel().selectedItemProperty().isNull());
     }

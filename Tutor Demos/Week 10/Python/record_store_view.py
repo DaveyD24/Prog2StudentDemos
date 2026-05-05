@@ -53,6 +53,7 @@ class RecordStoreView:
             return None
         return self.tree.item(self.tree.selection()[0], option="values")[0]
 
+    #Lookup pattern
     def album(self, str):
         for album in self.model.albums:
             if str == album.__str__():
@@ -60,14 +61,21 @@ class RecordStoreView:
         return None
 
     def remove(self):
-        selected_item = self.tree.selection()[0]
-        self.tree.delete(selected_item)
+        selected_item = self.get_selected_item()
+        self.model.albums.remove(self.album(selected_item))
+        self.refresh()
         self.set_button_state()
 
     def view(self):
-        item = self.tree.item(self.tree.selection()[0], option="values")[0]
-        chosen_album = self.album(item)
+        selected_item = self.get_selected_item()
+        chosen_album = self.album(selected_item)
         AlbumView(ut.top_level(chosen_album.name), chosen_album).control()
+
+    def refresh(self):
+        for item in self.tree.get_children():
+            self.tree.delete(item)
+        for album in self.model.albums:
+            self.tree.insert('', END, values=[album.__str__()])
 
     def close(self):
         self.root.destroy()

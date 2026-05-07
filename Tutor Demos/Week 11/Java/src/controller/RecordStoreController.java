@@ -47,7 +47,8 @@ public class RecordStoreController extends Controller<RecordStore> {
 
     @FXML
     public void handleRemove(ActionEvent event) {
-        for (Album album : getSelectedAlbums()) {
+        LinkedList<Album> albumsToRemove = new LinkedList<>(getSelectedAlbums());
+        for (Album album : albumsToRemove) {
             getRecordStore().getAlbums().remove(album);
         }
     }
